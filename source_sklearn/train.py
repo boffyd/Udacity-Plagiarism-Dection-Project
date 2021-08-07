@@ -1,8 +1,21 @@
 from __future__ import print_function
 
 import argparse
+import json
 import os
+import pickle
+import sys
+import sagemaker_containers
 import pandas as pd
+
+from catboost import CatBoostRegressor
+from sklearn.linear_model import LogisticRegression
+
+from sklearn.preprocessing import StandardScaler
+from sklearn.compose import ColumnTransformer
+from sklearn.pipeline import Pipeline
+
+from sklearn.ensemble import RandomForestClassifier
 
 # sklearn.externals.joblib is deprecated in 0.21 and will be removed in 0.23. 
 # from sklearn.externals import joblib
@@ -42,6 +55,11 @@ if __name__ == '__main__':
     parser.add_argument('--data-dir', type=str, default=os.environ['SM_CHANNEL_TRAIN'])
     
     ## TODO: Add any additional arguments that you will need to pass into your model
+    # hyperparameters sent by the client are passed as command-line arguments to the script.
+    # to simplify the demo we don't use all sklearn RandomForest hyperparameters
+    parser.add_argument("--n-estimators", type=int, default=10)
+    parser.add_argument("--min-samples-leaf", type=int, default=3)
+    
     
     # args holds all passed-in arguments
     args = parser.parse_args()
@@ -54,19 +72,30 @@ if __name__ == '__main__':
     train_y = train_data.iloc[:,0]
     train_x = train_data.iloc[:,1:]
     
-    
     ## --- Your code here --- ##
     
+    ## TODO: Define a model 
+    #model = CatBoostClassifier(iterations=2, learning_rate=1,depth=2)
+    
+    numeric_transformer = Pipeline(steps=[('scaler', StandardScaler())])
+    
+    preprocessor = ColumnTransformer(transformers=[
+    ('num', numeric_transformer, list(range(len(train_x.columns))))])
 
     ## TODO: Define a model 
-    model = None
+    model = Pipeline([('preprocessor', preprocessor), ('RF', RandomForestClassifier())]) 
+    
+    
+    #model = RandomForestClassifier(n_estimators=args.n_estimators, 
+                                  #min_samples_leaf=args.min_samples_leaf, 
+                                  #n_jobs=-1
+                                 #)
     
     
     ## TODO: Train the model
+    model.fit(train_x, train_y)
     
-    
-    
-    ## --- End of your code  --- ##
+        ## --- End of your code  --- ##
     
 
     # Save the trained model
