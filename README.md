@@ -30,6 +30,7 @@ The number of files is 100, 95 of these are answers and 5 are original source te
 * Clean and pre-process the text data.
 * Define features for comparing the similarity of an answer text and a source text, and extract similarity features
 > `Containment Features` The longest common subsequence is the longest string of words (or letters) that are the same between the Wikipedia Source Text (S) and the Student Answer Text (A). This value is also normalized by dividing by the total number of words (or letters) in the Student Answer Text.
+
 > `Longest Common Sequence` which is a method to determine overlap in word usage between two documents, The longest common subsequence is the longest string of words (or letters) that are the same between the Wikipedia Source Text (S) and the Student Answer Text (A). This value is also normalized by dividing by the total number of words (or letters) in the Student Answer Text.
 * Select "good" features, by analyzing the correlations between different features.
 * Create train/test `.csv` files that hold the relevant features and class labels for train/test data points.
