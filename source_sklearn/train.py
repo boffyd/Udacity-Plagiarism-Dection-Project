@@ -16,6 +16,7 @@ from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
 
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.ensemble import AdaBoostClassifier
 
 # sklearn.externals.joblib is deprecated in 0.21 and will be removed in 0.23. 
 # from sklearn.externals import joblib
@@ -72,31 +73,18 @@ if __name__ == '__main__':
     train_y = train_data.iloc[:,0]
     train_x = train_data.iloc[:,1:]
     
-    ## --- Your code here --- ##
-    
-    ## TODO: Define a model 
-    #model = CatBoostClassifier(iterations=2, learning_rate=1,depth=2)
-    
-    numeric_transformer = Pipeline(steps=[('scaler', StandardScaler())])
-    
-    preprocessor = ColumnTransformer(transformers=[
-    ('num', numeric_transformer, list(range(len(train_x.columns))))])
-
-    ## TODO: Define a model 
-    model = Pipeline([('preprocessor', preprocessor), ('RF', RandomForestClassifier())]) 
-    
-    
-    #model = RandomForestClassifier(n_estimators=args.n_estimators, 
-                                  #min_samples_leaf=args.min_samples_leaf, 
-                                  #n_jobs=-1
-                                 #)
+    ## --- Your code here --- ## 
+    model = RandomForestClassifier(n_estimators=args.n_estimators, 
+                                   min_samples_leaf=args.min_samples_leaf,
+                                   n_jobs=1
+                                 )
     
     
     ## TODO: Train the model
     model.fit(train_x, train_y)
     
         ## --- End of your code  --- ##
-    
+  
 
     # Save the trained model
     joblib.dump(model, os.path.join(args.model_dir, "model.joblib"))
