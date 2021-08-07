@@ -11,7 +11,19 @@ This project will be broken down into three main notebooks:
 **Notebook 1: Data Exploration**
 * Load in the corpus of plagiarism text data.
 * Explore the existing data features and the data distribution.
-* This first notebook is **not** required in your final project submission.
+
+The data contains a dataset with multiple text files, which characterised 
+ 
+ * as per the task (A- E), which is a topic that might be included in a curriculum, i.e "What is inheritance in object oriented programming?"
+ * a plagiarism label/category
+ > 1. `cut`: An answer is plagiarized; it is copy-pasted directly from the relevant Wikipedia source text.
+ > 2. `light`: An answer is plagiarized; it is based on the Wikipedia source text and includes some copying and paraphrasing.
+ > 3. `heavy`: An answer is plagiarized; it is based on the Wikipedia source text but expressed using different words and structure. Since this doesn't copy directly from a source text, this will likely be the most challenging kind of plagiarism to detect.
+> 4. `non`: An answer is not plagiarized; the Wikipedia source text is not used to create this answer.
+> 5. `orig`: This is a specific category for the original, Wikipedia source text. We will use these files only for comparison purposes.
+
+The number of files is 100, 95 of these are answers and 5 are original source texts.
+
 
 **Notebook 2: Feature Engineering**
 
