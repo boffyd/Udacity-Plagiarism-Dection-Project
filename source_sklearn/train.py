@@ -9,10 +9,10 @@ import sagemaker_containers
 import pandas as pd
 
 # sklearn.externals.joblib is deprecated in 0.21 and will be removed in 0.23. 
-# from sklearn.externals import joblib
+from sklearn.externals import joblib
 # Import joblib package directly
 
-import joblib
+#import joblib
 
 ## TODO: Import any additional libraries you need to define a model
 from sklearn.ensemble import RandomForestClassifier
