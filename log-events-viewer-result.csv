@@ -1,0 +1,111 @@
+timestamp,message
+1628376655406,"2021-08-07 22:50:50,960 sagemaker-containers INFO     Imported framework sagemaker_sklearn_container.training"
+1628376655406,"2021-08-07 22:50:50,963 sagemaker-training-toolkit INFO     No GPUs detected (normal if no gpus installed)"
+1628376655406,"2021-08-07 22:50:50,974 sagemaker_sklearn_container.training INFO     Invoking user training script."
+1628376655406,"2021-08-07 22:50:51,315 sagemaker-training-toolkit INFO     No GPUs detected (normal if no gpus installed)"
+1628376655406,"2021-08-07 22:50:54,339 sagemaker-training-toolkit INFO     No GPUs detected (normal if no gpus installed)"
+1628376655406,"2021-08-07 22:50:54,352 sagemaker-training-toolkit INFO     No GPUs detected (normal if no gpus installed)"
+1628376655406,"2021-08-07 22:50:54,364 sagemaker-training-toolkit INFO     Invoking user script
+"
+1628376655406,"Training Env:
+"
+1628376655407,"{
+    ""additional_framework_parameters"": {},
+    ""channel_input_dirs"": {
+        ""train"": ""/opt/ml/input/data/train""
+    },
+    ""current_host"": ""algo-1"",
+    ""framework_module"": ""sagemaker_sklearn_container.training:main"",
+    ""hosts"": [
+        ""algo-1""
+    ],
+    ""hyperparameters"": {},
+    ""input_config_dir"": ""/opt/ml/input/config"",
+    ""input_data_config"": {
+        ""train"": {
+            ""TrainingInputMode"": ""File"",
+            ""S3DistributionType"": ""FullyReplicated"",
+            ""RecordWrapperType"": ""None""
+        }
+    },
+    ""input_dir"": ""/opt/ml/input"",
+    ""is_master"": true,
+    ""job_name"": ""sagemaker-scikit-learn-2021-08-07-22-47-41-505"",
+    ""log_level"": 20,
+    ""master_hostname"": ""algo-1"",
+    ""model_dir"": ""/opt/ml/model"",
+    ""module_dir"": ""s3://sagemaker-us-east-1-063367546093/sagemaker-scikit-learn-2021-08-07-22-47-41-505/source/sourcedir.tar.gz"",
+    ""module_name"": ""train"",
+    ""network_interface_name"": ""eth0"",
+    ""num_cpus"": 4,
+    ""num_gpus"": 0,
+    ""output_data_dir"": ""/opt/ml/output/data"",
+    ""output_dir"": ""/opt/ml/output"",
+    ""output_intermediate_dir"": ""/opt/ml/output/intermediate"",
+    ""resource_config"": {
+        ""current_host"": ""algo-1"",
+        ""hosts"": [
+            ""algo-1""
+        ],
+        ""network_interface_name"": ""eth0""
+    },
+    ""user_entry_point"": ""train.py"""
+1628376655407,"}
+"
+1628376655407,"Environment variables:
+"
+1628376655407,"SM_HOSTS=[""algo-1""]"
+1628376655407,SM_NETWORK_INTERFACE_NAME=eth0
+1628376655407,SM_HPS={}
+1628376655407,SM_USER_ENTRY_POINT=train.py
+1628376655407,SM_FRAMEWORK_PARAMS={}
+1628376655407,"SM_RESOURCE_CONFIG={""current_host"":""algo-1"",""hosts"":[""algo-1""],""network_interface_name"":""eth0""}"
+1628376655407,"SM_INPUT_DATA_CONFIG={""train"":{""RecordWrapperType"":""None"",""S3DistributionType"":""FullyReplicated"",""TrainingInputMode"":""File""}}"
+1628376655407,SM_OUTPUT_DATA_DIR=/opt/ml/output/data
+1628376655407,"SM_CHANNELS=[""train""]"
+1628376655407,SM_CURRENT_HOST=algo-1
+1628376655407,SM_MODULE_NAME=train
+1628376655407,SM_LOG_LEVEL=20
+1628376655407,SM_FRAMEWORK_MODULE=sagemaker_sklearn_container.training:main
+1628376655407,SM_INPUT_DIR=/opt/ml/input
+1628376655407,SM_INPUT_CONFIG_DIR=/opt/ml/input/config
+1628376655407,SM_OUTPUT_DIR=/opt/ml/output
+1628376655407,SM_NUM_CPUS=4
+1628376655407,SM_NUM_GPUS=0
+1628376655407,SM_MODEL_DIR=/opt/ml/model
+1628376655407,SM_MODULE_DIR=s3://sagemaker-us-east-1-063367546093/sagemaker-scikit-learn-2021-08-07-22-47-41-505/source/sourcedir.tar.gz
+1628376655407,"SM_TRAINING_ENV={""additional_framework_parameters"":{},""channel_input_dirs"":{""train"":""/opt/ml/input/data/train""},""current_host"":""algo-1"",""framework_module"":""sagemaker_sklearn_container.training:main"",""hosts"":[""algo-1""],""hyperparameters"":{},""input_config_dir"":""/opt/ml/input/config"",""input_data_config"":{""train"":{""RecordWrapperType"":""None"",""S3DistributionType"":""FullyReplicated"",""TrainingInputMode"":""File""}},""input_dir"":""/opt/ml/input"",""is_master"":true,""job_name"":""sagemaker-scikit-learn-2021-08-07-22-47-41-505"",""log_level"":20,""master_hostname"":""algo-1"",""model_dir"":""/opt/ml/model"",""module_dir"":""s3://sagemaker-us-east-1-063367546093/sagemaker-scikit-learn-2021-08-07-22-47-41-505/source/sourcedir.tar.gz"",""module_name"":""train"",""network_interface_name"":""eth0"",""num_cpus"":4,""num_gpus"":0,""output_data_dir"":""/opt/ml/output/data"",""output_dir"":""/opt/ml/output"",""output_intermediate_dir"":""/opt/ml/output/intermediate"",""resource_config"":{""current_host"":""algo-1"",""hosts"":[""algo-1""],""network_interface_name"":""eth0""},""user_entry_point"":""train.py""}"
+1628376655407,SM_USER_ARGS=[]
+1628376655407,SM_OUTPUT_INTERMEDIATE_DIR=/opt/ml/output/intermediate
+1628376655407,SM_CHANNEL_TRAIN=/opt/ml/input/data/train
+1628376655407,"PYTHONPATH=/opt/ml/code:/miniconda3/bin:/miniconda3/lib/python37.zip:/miniconda3/lib/python3.7:/miniconda3/lib/python3.7/lib-dynload:/miniconda3/lib/python3.7/site-packages
+"
+1628376655407,"Invoking script with the following command:
+"
+1628376655407,"/miniconda3/bin/python train.py
+
+"
+1628376655407,"Traceback (most recent call last):
+  File ""train.py"", line 15, in <module>
+    import joblib"
+1628376655407,ModuleNotFoundError: No module named 'joblib'
+1628376655407,"2021-08-07 22:50:55,075 sagemaker-containers ERROR    Reporting training FAILURE"
+1628376655408,"2021-08-07 22:50:55,076 sagemaker-containers ERROR    framework error: "
+1628376655408,"Traceback (most recent call last):
+  File ""/miniconda3/lib/python3.7/site-packages/sagemaker_containers/_trainer.py"", line 84, in train
+    entrypoint()
+  File ""/miniconda3/lib/python3.7/site-packages/sagemaker_sklearn_container/training.py"", line 39, in main
+    train(environment.Environment())
+  File ""/miniconda3/lib/python3.7/site-packages/sagemaker_sklearn_container/training.py"", line 35, in train
+    runner_type=runner.ProcessRunnerType)
+  File ""/miniconda3/lib/python3.7/site-packages/sagemaker_training/entry_point.py"", line 100, in run
+    wait, capture_error
+  File ""/miniconda3/lib/python3.7/site-packages/sagemaker_training/process.py"", line 164, in run
+    cwd=environment.code_dir,
+  File ""/miniconda3/lib/python3.7/site-packages/sagemaker_training/process.py"", line 84, in check_error
+    raise error_class(return_code=return_code, cmd="" "".join(cmd), output=stderr)"
+1628376655408,sagemaker_training.errors.ExecuteUserScriptError: ExecuteUserScriptError:
+1628376655408,"Command ""/miniconda3/bin/python train.py""
+"
+1628376655408,ExecuteUserScriptError:
+1628376655408,"Command ""/miniconda3/bin/python train.py"""
