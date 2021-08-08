@@ -49,8 +49,8 @@ if __name__ == '__main__':
     ## TODO: Add any additional arguments that you will need to pass into your model
     # hyperparameters sent by the client are passed as command-line arguments to the script.
     # to simplify the demo we don't use all sklearn RandomForest hyperparameters
-    parser.add_argument("--n-estimators", type=int, default=10)
-    parser.add_argument("--min-samples-leaf", type=int, default=3)
+    #parser.add_argument("--n-estimators", type=int, default=10)
+    #parser.add_argument("--min-samples-leaf", type=int, default=3)
     
     
     # args holds all passed-in arguments
@@ -64,12 +64,18 @@ if __name__ == '__main__':
     train_y = train_data.iloc[:,0]
     train_x = train_data.iloc[:,1:]
     
-    ## --- Your code here --- ## 
-    model = RandomForestClassifier(n_estimators=args.n_estimators, 
-                                   min_samples_leaf=args.min_samples_leaf,
+    ## --- Your code here --- ##
+    #model = RandomForestClassifier(n_estimators=args.n_estimators, 
+                                   #min_samples_leaf=args.min_samples_leaf,
+                                   #n_jobs=1
+                                 #)
+    ## TODO: Define a model 
+    model = RandomForestClassifier(n_estimators = 100, 
+                                   min_samples_leaf = 3,
                                    n_jobs=1
                                  )
     
+
     
     ## TODO: Train the model
     model.fit(train_x, train_y)
