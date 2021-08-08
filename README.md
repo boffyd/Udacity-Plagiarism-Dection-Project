@@ -42,10 +42,10 @@ The number of files is 100, 95 of these are answers and 5 are original source te
 
 ## Notebook 3: Train and Deploy Your Model in SageMaker
 
-* Upload your train/test feature data to S3.
-* Define a binary classification model and a training script.
+* The data set is uploaded your train/test feature data to S3.
+* Define a binary classification model and a training script, for this model a random forest model was chosen
 * Train your model and deploy it using SageMaker.
-* Evaluate your deployed classifier.
+* Evaluate your deployed classifier.  The accuracy was greater than 90%
 
 ---
 
